@@ -22,7 +22,7 @@ const deleteUser = async _id => {
 };
 
 const updateUser = async (_id, { name, phoneNumber, email, hobbies }) => {
-    const user = await User.findByIdAndUpdate(_id);
+    const user = await User.findById(_id);
 
     user.name = name || user.name;
     user.phoneNumber = phoneNumber || user.phoneNumber;
