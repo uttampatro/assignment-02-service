@@ -23,15 +23,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 //DB config
-mongoose.connect(
-    process.env.DB_CONNECT,
-    {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true,
-    },
-    () => console.log('connected to DB')
-);
+mongoose.connect(process.env.DB_CONNECT, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+});
+console.log('connected to DB');
 
 //api middleware
 app.get('/', function (req, res) {
